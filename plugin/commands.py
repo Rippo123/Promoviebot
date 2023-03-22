@@ -45,10 +45,18 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('⚚ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('💥 ᴄᴏᴍɪɴɢ ꜱᴏᴏɴ 💥', callback_data="credit_info"),
-            InlineKeyboardButton('💥 ᴄᴏᴍɪɴɢ ꜱᴏᴏɴ 💥', callback_data="owner_info")
+            InlineKeyboardButton('💫 ᴄʀᴇᴅɪᴛs 💫', callback_data="credit_info"),
+            InlineKeyboardButton('🔱 ᴏᴡɴᴇʀ 🔱', callback_data="owner_info")
+            ],[      
+            InlineKeyboardButton('⚠️ ʜᴇʟᴘ ⚠️ ', callback_data='help2'),
+            InlineKeyboardButton('✨ ᴀʙᴏᴜᴛ ✨', callback_data='about')
+            ],[
+            InlineKeyboardButton('🥇 sᴜᴘᴘᴏʀᴛ 🥇', callback_data="group_info")
         ]]         
         reply_markup = InlineKeyboardMarkup(buttons)
+        m=await message.reply_sticker("CAACAgUAAxkBAAEOZdNj2S9tlg8fCuHg5gJ_MLJj3A3GXwACGAcAAimzaVe-HiqPelAOoB4E") 
+        await asyncio.sleep(3)
+        await m.delete()
         await message.reply_photo(
             photo=random.choice(PICS),
             caption=script.SUR_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
@@ -63,10 +71,14 @@ async def start(client, message):
         buttons = [[
             InlineKeyboardButton('⚚ ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ⚚', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            
-            InlineKeyboardButton('💥 ᴄᴏᴍɪɴɢ ꜱᴏᴏɴ 💥', callback_data="credit_info"),
-            InlineKeyboardButton('💥 ᴄᴏᴍɪɴɢ ꜱᴏᴏɴ 💥', callback_data="owner_info")
-        ]]                 
+            InlineKeyboardButton('💫 ᴄʀᴇᴅɪᴛs 💫', callback_data="credit_info"),
+            InlineKeyboardButton('🔱 ᴏᴡɴᴇʀ 🔱', callback_data="owner_info")
+            ],[      
+            InlineKeyboardButton('⚠️ ʜᴇʟᴘ ⚠️', callback_data='help2'),
+            InlineKeyboardButton('✨ ᴀʙᴏᴜᴛ ✨', callback_data='about')
+            ],[
+            InlineKeyboardButton('🥇 sᴜᴘᴘᴏʀᴛ 🥇', callback_data="group_info")
+        ]]         
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
             photo=random.choice(PICS),
